@@ -25,4 +25,5 @@ services:
         source: ./nginx/nginx.conf
         target: /etc/nginx/nginx.conf
     ports:
-      - "80:80"
+    - target: 80
+      published: 80
