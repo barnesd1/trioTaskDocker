@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS users
                           PRIMARY KEY (id),
                           UNIQUE (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+

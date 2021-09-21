@@ -8,12 +8,12 @@ db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:appuserpw@mysql-users:3306/mydb'
 
 class Users(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        first_name = db.Column(db.String(30), nullable=False)
-        last_name = db.Column(db.String(30), nullable=False)
-        email = db.Column(db.String(150), nullable=False, unique=True)
-        def __repr__(self):
-                return ''.join(['User ID: ', str(self.id), '\r\n', 'Email: ', self.email, ' Name: ', self.first_name, ' ', self.last_name, '\n'])
+	id = db.Column(db.Integer, primary_key=True)
+	first_name = db.Column(db.String(30), nullable=False)
+	last_name = db.Column(db.String(30), nullable=False)
+	email = db.Column(db.String(150), nullable=False, unique=True)
+	def __repr__(self):
+		return ''.join(['User ID: ', str(self.id), '\r\n', 'Email: ', self.email, ' Name: ', self.first_name, ' ', self.last_name, '\n'])
 
 
 @app.route('/')
@@ -22,5 +22,4 @@ def hello():
   return render_template('home.html', data1=data1)
 
 if __name__=='__main__':
-  app.run(host='0.0.0.0', port=5000, debug=True)azureuser@djb-server1:~/trio-task/flask-app
-
+  app.run(host='0.0.0.0', port=5000, debug=True)

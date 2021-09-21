@@ -1,4 +1,3 @@
-
 #Use Python 3.6 as a base image
 FROM python:3.6-slim-buster
 # Copy contents into image
@@ -9,4 +8,3 @@ RUN pip3 install -r requirements.txt
 EXPOSE 5000
 # Create an entrypoint
 CMD [ "python", "app.py" ]
-

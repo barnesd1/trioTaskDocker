@@ -1,2 +1,2 @@
 #!/bin/bash
-docker network create my-network
+docker network create myNetwork
