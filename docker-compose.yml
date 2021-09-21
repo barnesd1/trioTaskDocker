@@ -1,0 +1,28 @@
+version: '3.6'
+networks:
+  flask-app:
+    external: true
+services:
+  db:
+    container_name: mysql-users
+    build: ./db
+    image: barnesd1/my-sql-users:1.0
+    networks: 
+      - flask-app
+  flask-app:
+    container_name: flask-app
+    build: ./flask-app
+    image: flask-app
+    networks:
+      - flask-app 
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    networks:
+      - flask-app
+    volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+    ports:
+      - "80:80"
